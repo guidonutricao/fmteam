@@ -5,7 +5,8 @@ import { Button } from '@/components/ui/button';
 import { 
   Book, Calendar, ChevronLeft, ChevronRight, 
   Dumbbell, FileText, Gift, ListCheck, 
-  Star, Users, Utensils, Video 
+  Star, Users, Utensils, Video,
+  Bell, Settings // Added missing icon imports
 } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
