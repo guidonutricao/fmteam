@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -6,7 +5,7 @@ import {
   Book, Calendar, ChevronLeft, ChevronRight, 
   Dumbbell, FileText, Gift, ListCheck, 
   Star, Users, Utensils, Video,
-  Bell, Settings // Added missing icon imports
+  Bell, Settings
 } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -74,7 +73,7 @@ const MembersLayout: React.FC<MembersLayoutProps> = ({ children }) => {
         <div className="flex h-16 items-center justify-between px-4 border-b border-sidebar-border">
           {sidebarOpen && (
             <span className="text-xl font-semibold text-sidebar-foreground">
-              NutriSport
+              ÁREA DE MEMBROS FM TEAM
             </span>
           )}
           <Button 
