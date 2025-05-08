@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -107,7 +108,7 @@ const MembersLayout: React.FC<MembersLayoutProps> = ({ children }) => {
         <nav className="flex-1 overflow-y-auto p-4">
           <ul className="flex flex-col gap-1">
             {navigation.map((item) => (
-              <li key={item.to}>
+              <li key={item.to} className="relative group">
                 <NavItem 
                   to={item.to} 
                   label={item.label} 
@@ -115,7 +116,7 @@ const MembersLayout: React.FC<MembersLayoutProps> = ({ children }) => {
                   active={location.pathname === item.to} 
                 />
                 {!sidebarOpen && (
-                  <div className="tooltip hidden group-hover:block absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded">
+                  <div className="absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
                     {item.label}
                   </div>
                 )}
@@ -132,6 +133,7 @@ const MembersLayout: React.FC<MembersLayoutProps> = ({ children }) => {
               "w-full bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary/80",
               !sidebarOpen && "p-2"
             )}
+            onClick={() => window.location.href = "/"}
           >
             {sidebarOpen ? "Sair" : <ChevronLeft size={16} />}
           </Button>
@@ -144,7 +146,7 @@ const MembersLayout: React.FC<MembersLayoutProps> = ({ children }) => {
         sidebarOpen ? "ml-64" : "ml-[70px]"
       )}>
         <header className="sticky top-0 z-30 bg-background/95 backdrop-blur h-16 border-b px-6 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-primary">Área de Membros</h1>
+          <h1 className="text-2xl font-bold text-primary">ÁREA DE MEMBROS FM TEAM</h1>
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon">
               <Bell size={20} />
