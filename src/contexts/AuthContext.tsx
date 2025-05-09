@@ -24,8 +24,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.setItem('user', JSON.stringify(loggedUser));
   };
 
-  const register = async (email: string, password: string) => {
-    const newUser = await authService.register(email, password);
+  const register = async (email: string, password: string, profile: UserProfile = 'paciente') => {
+    const newUser = await authService.register(email, password, profile);
     setUser(newUser);
     localStorage.setItem('user', JSON.stringify(newUser));
   };

@@ -22,11 +22,11 @@ export const authService = {
     // Simula login social sempre como paciente
     return { email: provider + '@social.com', profile: 'paciente' };
   },
-  register: async (email: string, password: string): Promise<User> => {
+  register: async (email: string, password: string, profile: UserProfile = 'paciente'): Promise<User> => {
     if (users.some(u => u.email === email)) {
       throw new Error('E-mail já cadastrado');
     }
-    const newUser: User = { email, profile: 'paciente' };
+    const newUser: User = { email, profile };
     users.push(newUser);
     passwords[email] = password;
     return newUser;
